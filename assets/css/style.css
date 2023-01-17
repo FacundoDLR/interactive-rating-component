@@ -8,7 +8,7 @@
     /* Neutral */
     --white-color: hsl(0, 0%, 100%);
     --lightGrey-color: hsl(217, 12%, 63%);
-    --mediumGrey-color: hsl(216, 12%, 54%);
+    --mediumGrey-color: hsl(214, 12%, 27%);
     --darkBlue-color: hsl(213, 19%, 18%);
     --veryDarkBlue-color: hsl(216, 12%, 8%);
 
@@ -21,4 +21,108 @@
     --fontW-400: 400;
     --fontW-700: 700;
 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--firstFont);
+}
+
+body{
+    background-color: var(--veryDarkBlue-color);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card{
+    background-color: var(--darkBlue-color);
+    width: 27rem;
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.star{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--mediumGrey-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.titleCard{
+    color: var(--white-color);
+    font-weight: var(--fontW-700);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+.pargraphCard{
+    color: var(--lightGrey-color);
+    margin-bottom: 1.3rem;
+}
+
+.point__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.point__container button{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--mediumGrey-color);
+    border: none;
+    color: var(--lightGrey-color);
+    cursor: pointer;
+    transition: 300ms all;
+}
+
+.point__container button:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.point__container button:focus{
+    background-color: var(--lightGrey-color);
+    color: var(--white-color);
+}
+
+.submitBtn{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: var(--fontW-400);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 300ms all;
+}
+
+.submitBtn:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+.thanks{
+    display: none;
+}
+
+
+.attribution,
+.attribution a{
+    color: var(--mediumGrey-color);
+    transition: 300ms all;
+}
+.attribution a:hover{
+    color: var(--primary-color);
 }
