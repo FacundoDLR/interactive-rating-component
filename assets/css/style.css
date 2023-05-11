@@ -32,8 +32,8 @@
 
 body{
     background-color: var(--veryDarkBlue-color);
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     display: grid;
     place-items: center;
 }
@@ -49,10 +49,6 @@ body{
 
 .center{
     text-align: center;
-}
-
-.rating{
-    /* display: none; */
 }
 
 .star{
@@ -151,4 +147,13 @@ body{
     margin: auto;
     background-color: var(--mediumGrey-color);
     font-size: var(--fontSize);
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        width: 23rem;
+    }
+    .attribution{
+        padding: 0 2rem;
+    }
 }
