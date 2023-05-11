@@ -1,5 +1,5 @@
 // Seccion de rating
-const estrellas = document.querySelectorAll('#btn');
+const estrellas = document.getElementsByName('estrellas');
 const resultado = document.getElementById('resultRating');
 
 estrellas.forEach((star, index1) => {
