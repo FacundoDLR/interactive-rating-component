@@ -22,7 +22,7 @@
 
   <!-- Rating state start -->
 
-  <div class="card rating">
+  <div class="card rating" id="seccionPrincipal">
 
     
     <div class="star">
@@ -34,14 +34,24 @@
     <p class="pargraphCard">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
   
     <div class="point__container">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
+      <label>
+        <input id="btn" type="button" name="estrellas" value="1">
+      </label>    
+      <label>
+        <input id="btn" type="button" name="estrellas" value="2">
+      </label>    
+      <label>
+        <input id="btn" type="button" name="estrellas" value="3">
+      </label>    
+      <label>
+        <input id="btn" type="button" name="estrellas" value="4">
+      </label>    
+      <label>
+        <input id="btn" type="button" name="estrellas" value="5">
+      </label>    
     </div>
   
-    <button class="submitBtn" type="submit">Submit</button>
+    <button class="submitBtn" id="submitButton" type="submit">Submit</button>
 
   </div>
 
@@ -50,14 +60,14 @@
 
   <!-- Thank you state start -->
 
-  <div class="card thanks">
+  <div class="card thanks" id="seccionOculta">
 
     <div class="thanksImg center">
       <img src="./images/illustration-thank-you.svg" alt="">
     </div>
 
     <div class="containerBadge center">
-      <div class="badge">You selected <!-- Add rating here --> out of 5</div>
+      <div class="badge" id="resultRating"></div>
     </div>
 
     <h3 class="titleCard center">Thank you!</h3>
@@ -73,7 +83,9 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Facundo De los Rios</a>.
   </div>
+
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>

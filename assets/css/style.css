@@ -44,7 +44,7 @@ body{
     height: 25rem;
     padding: 2rem;
     border-radius: 20px;
-    display: grid;
+    display:grid;
 }
 
 .center{
@@ -52,7 +52,7 @@ body{
 }
 
 .rating{
-    display: none;
+    /* display: none; */
 }
 
 .star{
@@ -86,7 +86,7 @@ body{
     margin-bottom: 1.5rem;
 }
 
-.point__container button{
+.point__container input{
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -97,12 +97,12 @@ body{
     transition: 300ms all;
 }
 
-.point__container button:hover{
+.point__container input:hover{
     background-color: var(--primary-color);
     color: var(--white-color);
 }
 
-.point__container button:focus{
+.point__container input.active{
     background-color: var(--lightGrey-color);
     color: var(--white-color);
 }
@@ -126,7 +126,7 @@ body{
 }
 
 .thanks{
-    /* display: none; */
+    display: none;
 }
 
 
