@@ -1,159 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 
-:root{
-    /************* Colors *************/
+:root {
+  /************* Colors *************/
+  --color-darkBlue: hsl(213, 19%, 18%);
+  --color-lightGrey: hsl(216, 12%, 63%);
+  --color-orange: hsl(25, 97%, 53%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-veryDarkBlue: hsl(218, 11%, 8%);
 
-    /* Primary */
-    --primary-color: hsl(25, 97%, 53%);
-    /* Neutral */
-    --white-color: hsl(0, 0%, 100%);
-    --lightGrey-color: hsl(217, 12%, 63%);
-    --mediumGrey-color: hsl(214, 12%, 27%);
-    --darkBlue-color: hsl(213, 19%, 18%);
-    --veryDarkBlue-color: hsl(216, 12%, 8%);
+  --gradient-primary: radial-gradient(
+    ellipse at 50% 0%,
+    #232a34 0%,
+    #232a34 20%,
+    #181e27 100%
+  );
 
-    /************* Typography *************/
-    
-    --fontSize: 15px;
+  /************* Typography *************/
+  --fontSize-heading-large: 1.75rem;
+  --fontSize-heading-medium: 0.9375rem;
+  --fontSize-rating: 1rem;
+  --fontSize-body: 0.9375rem;
 
-    --firstFont:'Overpass', sans-serif;
+  --line-height: 1.6; /* 24px */
+  --letter-spacing: 2px;
 
-    --fontW-400: 400;
-    --fontW-700: 700;
+  --font-primary: "Overpass", sans-serif;
 
+  --fontW-400: 400;
+  --fontW-700: 700;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--firstFont);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
 }
 
-body{
-    background-color: var(--veryDarkBlue-color);
-    width: 100dvw;
-    height: 100dvh;
-    display: grid;
-    place-items: center;
+body {
+  background-color: var(--color-veryDarkBlue);
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  place-content: center;
 }
 
-.card{
-    background-color: var(--darkBlue-color);
-    width: 27rem;
-    height: 25rem;
-    padding: 2rem;
-    border-radius: 20px;
-    display:grid;
+main {
+  display: grid;
+  place-content: center;
 }
 
-.center{
-    text-align: center;
+h1,
+h2 {
+  font-size: var(--fontSize-heading-large);
+  font-weight: var(--fontW-700);
 }
 
-.star{
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: var(--mediumGrey-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
+p {
+  font-size: var(--fontSize-body);
+  font-weight: var(--fontW-400);
+  color: var(--color-lightGrey);
+  line-height: var(--line-height);
 }
 
-.titleCard{
-    color: var(--white-color);
-    font-weight: var(--fontW-700);
-    font-size: 1.7rem;
-    margin-bottom: 1rem;
-}
-.pargraphCard{
-    color: var(--lightGrey-color);
-    margin-bottom: 1.3rem;
-    font-size: var(--fontSizes);
+.card {
+  background-color: var(--color-darkBlue);
+  background: var(--gradient-primary);
+  max-width: 27rem;
+  padding: 2rem;
+  border-radius: 1.875rem;
 }
 
-.point__container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 1.5rem;
+.star {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--color-darkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 1.875rem;
 }
 
-.point__container input{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: var(--mediumGrey-color);
-    border: none;
-    color: var(--lightGrey-color);
-    cursor: pointer;
-    transition: 300ms all;
+.titleCard {
+  color: var(--color-white);
+  padding-block-end: 0.4375rem;
+}
+.pargraphCard {
+  padding-block-end: 1.5rem;
 }
 
-.point__container input:hover{
-    background-color: var(--primary-color);
-    color: var(--white-color);
+.point__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-block-end: 2rem;
 }
 
-.point__container input.active{
-    background-color: var(--lightGrey-color);
-    color: var(--white-color);
+button.rating-option {
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 50%;
+  font-weight: var(--fontW-700);
+  background-color: var(--color-darkBlue);
+  border: none;
+  color: var(--color-lightGrey);
+  cursor: pointer;
+  transition: 300ms all;
 }
 
-.submitBtn{
-    width: 100%;
-    height: 2.5rem;
-    border-radius: 20px;
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    font-weight: var(--fontW-400);
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 300ms all;
+button.rating-option:where(:hover, :focus-visible),
+.rating-option.active:is(:hover, :focus-visible) {
+  background-color: var(--color-orange);
+  color: var(--color-veryDarkBlue);
 }
 
-.submitBtn:hover{
-    background-color: var(--white-color);
-    color: var(--primary-color);
+.rating-option.active {
+  background-color: var(--color-lightGrey);
+  color: var(--color-veryDarkBlue);
 }
 
-.thanks{
-    display: none;
+.submitBtn {
+  width: 100%;
+  min-height: 2.8125rem;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--color-orange);
+  color: var(--color-veryDarkBlue);
+  font-size: var(--fontSize-heading-medium);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--fontW-700);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 300ms all;
 }
 
+.submitBtn:where(:hover, :focus-visible) {
+  background-color: var(--color-white);
+}
+
+.thanks {
+  display: none;
+  padding: 2.125rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thanksImg {
+  padding-block-end: 1.5rem;
+}
+
+.containerBadge {
+  padding-block-end: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.badge {
+  color: var(--color-orange);
+  width: max-content;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  background-color: var(--color-darkBlue);
+  font-size: var(--fontSize-rating);
+}
+
+.thanks .titleCard {
+  font-size: var(--fontSize-heading-large);
+  padding-block-end: 1.25rem;
+}
+.thanks p {
+  text-align: center;
+  padding-block-end: 0;
+}
+
+.attribution {
+  text-align: center;
+  line-height: 1.1;
+}
 
 .attribution,
-.attribution a{
-    color: var(--mediumGrey-color);
-    transition: 300ms all;
+.attribution a {
+  color: var(--color-darkBlue);
+  transition: 300ms all;
 }
-.attribution a:hover{
-    color: var(--primary-color);
-}
-
-.containerBadge{
-    margin: 1rem 0 1.5rem
+.attribution a:where(:hover, :focus-visible) {
+  color: var(--color-orange);
 }
 
-.badge{
-    color: var(--primary-color);
-    width: 12rem;
-    padding: .2rem 1rem;
-    border-radius: 20px;
-    margin: auto;
-    background-color: var(--mediumGrey-color);
-    font-size: var(--fontSize);
-}
-
-@media only screen and (max-width: 600px) {
-    .card{
-        width: 23rem;
+@media screen and (width < 768px) {
+    main{
+        padding-inline: 1.5rem;
     }
-    .attribution{
-        padding: 0 2rem;
-    }
+  .card {
+    min-width: 20.4375rem;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+  .star{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding-block-end: 1rem;
+  }
+  .titleCard{
+    padding-block-end: .625rem;
+  }
+  .point__container{
+    padding-block-end: 1.5rem;
+  }
+  button.rating-option{
+    min-width: 2.625rem;
+    min-height: 2.625rem;
+  }
+
+  .thanks{
+    padding: 2.125rem 1.5rem
+  }
+  .attribution {
+    padding: 0 2rem;
+  }
 }

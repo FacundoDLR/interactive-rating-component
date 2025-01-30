@@ -1,5 +1,5 @@
 // Seccion de rating
-const estrellas = document.getElementsByName('estrellas');
+const estrellas = document.querySelectorAll('.rating-option');
 const resultado = document.getElementById('resultRating');
 
 estrellas.forEach((star, index1) => {
@@ -10,7 +10,7 @@ estrellas.forEach((star, index1) => {
         ? star.classList.add('active')
         : star.classList.remove('active');
     });
-    resultado.innerHTML = `You selected ${star.value} out of 5`;
+    resultado.innerHTML = `You selected ${star.textContent} out of 5`;
   });
 });
 //Display resultado rating
@@ -18,7 +18,7 @@ const submitBoton = document.getElementById('submitButton');
 const seccionPrincipal = document.getElementById('seccionPrincipal');
 const seccionOculta = document.getElementById('seccionOculta');
 
-submitBoton.onclick = function() {
+submitBoton.onclick = function () {
   seccionPrincipal.style.display = 'none';
-  seccionOculta.style.display = 'block';
+  seccionOculta.style.display = 'flex';
 };

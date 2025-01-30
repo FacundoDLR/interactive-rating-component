@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://interactive-rating-component-newbie-facundodlr.vercel.app/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="https://interactive-rating-component-newbie-facundodlr.vercel.app/images/favicon-32x32.png" type="image/x-icon">
+  <meta name="theme-color" content="#FF6600">
+
   <title>Frontend Mentor | Interactive rating component</title>
+
+  <meta property="og:description" content="Interactive rating component from frontend mentor" />
+  <meta property="og:image" content="https://interactive-rating-component-newbie-facundodlr.vercel.app/design/desktop-preview.jpg" />
+  <meta property="og:url" content="https://interactive-rating-component-newbie-facundodlr.vercel.app/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="author" content="FACUNDO A. DE LOS RIOS">
+  <meta name="description" content="Interactive rating component from frontend mentor">
 
   <!-- Google-Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,78 +24,69 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="https://interactive-rating-component-newbie-facundodlr.vercel.app/assets/css/style.css">
 
 </head>
+
 <body>
 
-  <!-- Rating state start -->
+  <main class="main-content">
+    <!-- Rating state start -->
 
-  <main class="card rating" id="seccionPrincipal">
+    <section class="card rating" id="seccionPrincipal">
 
-    
-    <div class="star">
-      <img src="./images/icon-star.svg" alt="">
-    </div>
-    
+      <div class="star" aria-hidden="true">
+        <img src="https://interactive-rating-component-newbie-facundodlr.vercel.app/images/icon-star.svg" alt="">
+      </div>
 
-    <h1 class="titleCard">How did we do?</h1>
-    <p class="pargraphCard">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-  
-    <div class="point__container">
-      <label>
-        <input type="button" name="estrellas" value="1">
-      </label>    
-      <label>
-        <input type="button" name="estrellas" value="2">
-      </label>    
-      <label>
-        <input type="button" name="estrellas" value="3">
-      </label>    
-      <label>
-        <input type="button" name="estrellas" value="4">
-      </label>    
-      <label>
-        <input type="button" name="estrellas" value="5">
-      </label>    
-    </div>
-  
-    <button class="submitBtn" id="submitButton" type="submit">Submit</button>
+      <h1 id="mainHeading" class="titleCard">How did we do?</h1>
+      <p class="pargraphCard">Please let us know how we did with your support request. All feedback is appreciated to
+        help us improve our offering!</p>
 
+      <div class="point__container" role="radiogroup">
+        <button type="button" class="rating-option" role="radio" aria-checked="false" data-value="1">1</button>
+        <button type="button" class="rating-option" role="radio" aria-checked="false" data-value="2">2</button>
+        <button type="button" class="rating-option" role="radio" aria-checked="false" data-value="3">3</button>
+        <button type="button" class="rating-option" role="radio" aria-checked="false" data-value="4">4</button>
+        <button type="button" class="rating-option" role="radio" aria-checked="false" data-value="5">5</button>
+      </div>
+
+      <button class="submitBtn" id="submitButton" type="submit">Submit</button>
+
+    </section>
+
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+
+    <section class="card thanks" id="seccionOculta" hidden aria-labelledby="thankYouHeading" aria-live="polite">
+
+      <div class="thanksImg">
+        <img src="https://interactive-rating-component-newbie-facundodlr.vercel.app/images/illustration-thank-you.svg" alt="Illustration of a received rating">
+      </div>
+
+      <div class="containerBadge">
+        <div class="badge" id="resultRating" role="status"></div>
+      </div>
+
+      <h3 class="titleCard">Thank you!</h3>
+
+      <p class="pargraphCard">We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!</p>
+
+    </section>
+
+    <!-- Thank you state end -->
   </main>
 
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  <div class="card thanks" id="seccionOculta">
-
-    <div class="thanksImg center">
-      <img src="./images/illustration-thank-you.svg" alt="">
-    </div>
-
-    <div class="containerBadge center">
-      <div class="badge" id="resultRating"></div>
-    </div>
-
-    <h3 class="titleCard center">Thank you!</h3>
-  
-    <p class="pargraphCard center">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
-
-  </div>
-
-  
-
-  <!-- Thank you state end -->
-
-  
   <footer class="attribution">
-    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="https://github.com/FacundoDLR/interactive-rating-component" target="_blank">Facundo De los Rios</a>.</p>
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        rel="noopener noreferrer">Frontend Mentor<span class="sr-only"> (opens in new window)</span></a>. </p>
+    <p>Coded by <a href="https://github.com/FacundoDLR/interactive-rating-component" target="_blank"
+        rel="noopener noreferrer">Facundo De los Rios<span class="sr-only"> (opens in new window)</span></a>.</p>
   </footer>
 
-  <script src="./assets/js/main.js"></script>
+  <script src="https://interactive-rating-component-newbie-facundodlr.vercel.app/assets/js/main.js"></script>
 </body>
+
 </html>
